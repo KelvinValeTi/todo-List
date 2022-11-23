@@ -1,0 +1,159 @@
+@charset "UFT-8";
+
+/*===
+Geral
+====*/
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+    color:#333;
+}
+
+body{
+    background-image: url("../img/bg-img.jpg");
+    background-position: center;
+    background-size:cover;    
+}
+
+button{
+    background-color: #FDFDFD;
+    color: #102F5e;
+    border: 2px solid #102F5e;
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+    transition:0.4s;
+}
+
+button:hover{
+    background-color:#102F5e;
+    color:#ffffff;
+}
+
+button:hover > i{
+    color:#ffffff;
+}
+
+button i{
+    color:#102F5e;
+    font-weight: bold;
+    pointer-events: none; /*desabilita os eventos de icone, ao clicar no icone, é como se estivesse clicando no botão*/
+}
+
+input, select{
+    padding:0.25rem 0.5rem; 
+}
+
+.hide{
+    display:none;
+}
+
+/*todo header*/
+.todo-container{
+    max-width:450px;
+    margin:3rem auto 0;
+    background-color: #FDFDFD;
+    padding:1.5rem;
+    border-radius:15px;
+}
+
+.todo-container header{
+    text-align: center;
+    padding: 0 1rem 1rem;
+    border-bottom:1px solid #ccc;
+}
+
+/*todo form*/
+#todo-form, #edit-form{
+    padding: 1rem;
+    border-bottom:1px solid #ccc;
+}
+#todo-form p, #edit-form p{
+    margin-bottom:0.5rem;
+    font-weight:bold;
+}
+
+.form-control{
+    display:flex;
+}
+
+.form-control input{
+    margin-right: 0.3rem;
+}
+
+#cancel-edit-btn{
+    margin-top:1rem;
+}
+
+/*todo toolbar*/
+#toolbar{
+    padding:1rem;
+    border-bottom: 1px solid #ccc;
+
+    display:flex;
+}
+
+#toolbar h4{
+    margin-bottom: .5rem;
+}
+
+#search{
+    border-right: 1px solid #DDD;
+    padding-right:1rem;
+    margin-right:1rem;
+    width:65%;
+
+    display:flex;
+    flex-direction:column;
+}
+
+#search form{
+    display:flex;
+}
+
+#search input{
+    width: 100%;
+    margin-right:0.3rem;
+}
+
+#filter{
+    width:35%;
+    display:flex;
+    flex-direction: column;
+}
+
+#filter select{
+    flex:1;
+}
+
+/*Todo List*/
+.todo{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom:1px solid #DDD;
+    transition:.3s;
+}
+
+.todo h3{
+    flex:1;
+    font-size:0.9rem;
+}
+
+.todo button{
+    margin-left:0.4rem;
+}
+
+.done{
+    background-color:#395169;
+    text-decoration: line-through;
+    font-style: italic;
+}
