@@ -6,6 +6,10 @@ const editForm = document.querySelector("#edit-form");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 
+//select filtrar
+const filterSelect = document.getElementById("filter-select");
+
+
 let oldInputValue;
 
 
@@ -126,3 +130,44 @@ editForm.addEventListener("submit",(e)=>{
     toggleForms();
 
 });
+
+//campo select - filtrar
+filterSelect.addEventListener("click", ()=>{
+
+    let todo = document.querySelectorAll(".todo");
+
+    if(filterSelect.value == "all"){
+      
+      if(todo.length>0){
+        for(let i=0; i<todo.length;i++){
+            todo[i].classList.remove("hide");
+        }
+      }
+      
+    }else if(filterSelect.value == "done"){
+        
+        if(todo.length>0){
+            for(let i=0; i<todo.length;i++){
+                if(todo[i].classList.contains("done")){
+                    todo[i].classList.remove("hide");
+                }else{
+                    todo[i].classList.add("hide");
+                }
+            }
+        }
+    }else if(filterSelect.value == "todo"){
+        
+        if(todo.length>0){
+            for(let i=0; i<todo.length;i++){
+                if(!todo[i].classList.contains("done")){
+                    todo[i].classList.remove("hide");
+                }else{
+                    todo[i].classList.add("hide");
+                }
+            }
+        }
+    }
+});
+
+
+

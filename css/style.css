@@ -51,9 +51,7 @@ input, select{
     padding:0.25rem 0.5rem; 
 }
 
-.hide{
-    display:none;
-}
+
 
 /*todo header*/
 .todo-container{
@@ -156,4 +154,8 @@ input, select{
     background-color:#395169;
     text-decoration: line-through;
     font-style: italic;
+}
+
+.hide{
+    display:none;
 }
