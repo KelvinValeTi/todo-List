@@ -6,8 +6,13 @@ const editForm = document.querySelector("#edit-form");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 
+
 //select filtrar
 const filterSelect = document.getElementById("filter-select");
+//search toobar
+let input = document.getElementById('search-input');
+const eraseButton = document.getElementById('erase-button');
+
 
 
 let oldInputValue;
@@ -64,6 +69,22 @@ const updateTodo=(text)=>{
         }
 
     });
+}
+
+function pesquisaPalavra(){
+    input = document.getElementById('search-input').value
+    input = input.toLowerCase();
+
+    let todo = document.querySelectorAll(".todo");
+      
+    for (i = 0; i < todo.length; i++) { 
+        if (!todo[i].innerHTML.toLowerCase().includes(input)) {
+            todo[i].classList.add("hide");
+        }else {
+            //exibir apenas item(s) encontrados
+            todo[i].classList.remove("hide");              
+        }
+    }
 }
 
 //eventos
@@ -170,4 +191,14 @@ filterSelect.addEventListener("click", ()=>{
 });
 
 
+//pesquisar toolbar
+input.addEventListener("keyup",()=>{
+    pesquisaPalavra();
+});
+
+//botão de apagar input - barra de pesquisa
+eraseButton.addEventListener("click", ()=>{
+    document.getElementById('search-input').value = "";
+    pesquisaPalavra();
+});
 
