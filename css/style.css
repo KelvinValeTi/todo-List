@@ -12,9 +12,8 @@ Geral
 }
 
 body{
-    background-image: url("../img/bg-img.jpg");
-    background-position: center;
-    background-size:cover;    
+    background-color: rgb(90, 90, 139);
+    padding-top:10vh;
 }
 
 button{
@@ -50,8 +49,6 @@ button i{
 input, select{
     padding:0.25rem 0.5rem; 
 }
-
-
 
 /*todo header*/
 .todo-container{
